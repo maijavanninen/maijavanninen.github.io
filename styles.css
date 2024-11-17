@@ -1,73 +1,142 @@
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display', sans-serif;
     line-height: 1.6;
-    max-width: 1000px;
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 20px;
-    color: #333;
+    padding: 40px 20px;
+    color: #1d1d1f;
+    background-color: #fbfbfd;
 }
 
 header {
     text-align: center;
-    margin-bottom: 40px;
-    border-bottom: 2px solid #4a90e2;
+    margin-bottom: 60px;
     padding-bottom: 20px;
+    position: relative;
+}
+
+header::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #86868b, transparent);
 }
 
 .profile-section {
     display: flex;
-    gap: 40px;
-    margin-bottom: 40px;
+    gap: 60px;
+    margin-bottom: 60px;
     align-items: start;
+    background: white;
+    border-radius: 24px;
+    padding: 40px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+    border: 1px solid rgba(0, 0, 0, 0.04);
 }
 
 .profile-image {
-    width: 250px;
-    height: 300px;
-    background-color: #f0f0f0;
-    border-radius: 5px;
+    width: 300px;
+    height: 360px;
+    background-color: #fbfbfd;
+    border-radius: 16px;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
+    overflow: hidden;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
 }
 
-.profile-text {
-    flex: 1;
+.profile-text p {
+    font-size: 1.1em;
+    line-height: 1.7;
+    color: #1d1d1f;
+    margin-bottom: 1.5em;
 }
 
 .contact-info {
-    background-color: #f8f8f8;
-    padding: 20px;
-    border-radius: 5px;
-    margin-top: 30px;
+    background: linear-gradient(145deg, #fff, #f8f8fa);
+    padding: 32px;
+    border-radius: 24px;
+    margin-top: 40px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+    border: 1px solid rgba(0, 0, 0, 0.04);
 }
 
 h1 {
-    color: #2c3e50;
+    color: #1d1d1f;
     margin: 0;
+    font-weight: 700;
+    font-size: 56px;
+    letter-spacing: -0.015em;
+    background: linear-gradient(135deg, #1d1d1f 0%, #434344 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 h2 {
-    color: #2c3e50;
-    border-bottom: 1px solid #eee;
-    padding-bottom: 10px;
+    color: #1d1d1f;
+    padding-bottom: 16px;
+    font-weight: 600;
+    font-size: 32px;
+    letter-spacing: -0.003em;
+    margin-top: 48px;
 }
 
 .subtitle {
-    font-size: 1.2em;
-    color: #666;
-    margin: 10px 0;
+    font-size: 1.4em;
+    color: #6e6e73;
+    margin: 16px 0;
+    font-weight: 400;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    padding: 12px 0;
+    border-bottom: 1px solid #e8e8ed;
+    color: #1d1d1f;
+    font-size: 1.1em;
+}
+
+ul li:last-child {
+    border-bottom: none;
+}
+
+.contact-info:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.08);
+}
+
+.profile-section, .contact-info {
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 @media (max-width: 768px) {
     .profile-section {
         flex-direction: column;
         align-items: center;
+        padding: 24px;
+        gap: 32px;
     }
 
     .profile-image {
-        width: 200px;
-        height: 240px;
+        width: 240px;
+        height: 280px;
+    }
+
+    h1 {
+        font-size: 42px;
+    }
+
+    .subtitle {
+        font-size: 1.2em;
     }
 } 
